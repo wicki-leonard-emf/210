@@ -1,5 +1,4 @@
-const apiEndpoint = "
-https://app-210-300721-witz-nathan--f5g9w3w.jollypebble-6c92dd9e.northeurope.azurecontainerapps.io/api/tasks";
+const apiEndpoint = "https://app-210-300721-witz-nathan--f5g9w3w.jollypebble-6c92dd9e.northeurope.azurecontainerapps.io/api/tasks";
 
 $(document).ready(function () {
   // Charger les tâches au démarrage
