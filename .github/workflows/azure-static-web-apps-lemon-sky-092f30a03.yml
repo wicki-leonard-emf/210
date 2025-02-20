@@ -45,6 +45,13 @@ jobs:
           output_location: "." # Built app content directory - optional
           github_id_token: ${{ steps.idtoken.outputs.result }}
           ###### End of Repository/Build Configurations ######
+      - name: Run Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v9
+        with:
+          urls: https://your-app-url.com
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+          assertions: '{"categories:performance": ["error", {"minScore": 0.9}], "categories:accessibility": ["error", {"minScore": 0.9}]}'
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
