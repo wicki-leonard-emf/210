@@ -48,7 +48,7 @@ jobs:
       - name: Run Lighthouse CI
         uses: treosh/lighthouse-ci-action@v9
         with:
-          urls: "https://todoapp.nathanwitz.emf-informatique.ch/"
+          urls: "https://todoapp.nathanwitz.emf-informatique.ch"
           uploadArtifacts: true
           temporaryPublicStorage: true
 
