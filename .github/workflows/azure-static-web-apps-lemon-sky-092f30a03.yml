@@ -31,9 +31,9 @@ jobs:
         id: idtoken
         with:
           script: |
-            const core = require('@actions/core')
             return await core.getIDToken()
           result-encoding: string
+
           
       # Étape de vérification de la présence du fichier index.html
       - name: Vérifier la présence de index.html
