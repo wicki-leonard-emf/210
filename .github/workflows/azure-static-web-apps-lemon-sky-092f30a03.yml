@@ -52,6 +52,14 @@ jobs:
           uploadArtifacts: true # Sauvegarde les résultats du rapport
           temporaryPublicStorage: true # Génère un lien public vers le rapport
 
+      - name: Exécuter Lighthouse
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          urls: "https://todoapp.nathanwitz.emf-informatique.ch/" # Remplace par l'URL de ton app déployée
+          configPath: ".lighthouserc.json" # Facultatif, pour configurer Lighthouse
+          uploadArtifacts: false # Pour voir les rapports dans GitHub Actions
+          temporaryPublicStorage: true # Partage temporaire des rapports
+
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
