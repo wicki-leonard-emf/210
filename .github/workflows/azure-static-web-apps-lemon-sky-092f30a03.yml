@@ -45,11 +45,12 @@ jobs:
           output_location: "." # Built app content directory - optional
           github_id_token: ${{ steps.idtoken.outputs.result }}
           ###### End of Repository/Build Configurations ######
-      - name: Run Lighthouse CI
-        uses: treosh/lighthouse-ci-action@v9
+        # Ajout de l'étape Lighthouse CI
+      - name: Exécuter Lighthouse sur le build
+        uses: treosh/lighthouse-ci-action@v12
         with:
-          urls: "https://todoapp.nathanwitz.emf-informatique.ch"
-          uploadArtifacts: true
+          urls: ${{ steps.builddeploy.outputs.static_web_app_url }}
+          uploadArtifacts: true 
           temporaryPublicStorage: true
 
   close_pull_request_job:
