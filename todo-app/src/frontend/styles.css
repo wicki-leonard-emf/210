@@ -1,22 +1,36 @@
 /* Général */
+:root {
+  --bg-color: #1a1a1a;
+  --bg-gradient: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+  --text-color: #ffffff;
+  --container-bg: #2d2d2d;
+  --input-border: #444;
+  --item-bg: #3d3d3d;
+  --item-completed-bg: #363636;
+  --primary-color: #d6c2be;
+  --hover-color: #1a75ff;
+  --delete-color: #ff6b6b;
+  --delete-hover: #ff4747;
+}
+
 body {
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(135deg, #f0f4fd, #cce5ff);
+  background: #1e1e1e;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  color: #333;
+  color: var(--text-color);
 }
 
 /* Conteneur principal */
 .app-container {
-  background: #fff;
+  background: #2d2d2d;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   width: 100%;
   max-width: 400px;
   text-align: center;
@@ -26,7 +40,7 @@ body {
 .app-container h1 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #007bff;
+  color: var(--primary-color);
   font-weight: bold;
 }
 
@@ -41,19 +55,21 @@ body {
   flex: 1;
   padding: 10px;
   font-size: 16px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--input-border);
   border-radius: 8px 0 0 8px;
   outline: none;
   transition: border-color 0.3s ease;
+  background: var(--bg-color);
+  color: var(--text-color);
 }
 
 #todo-input:focus {
-  border-color: #007bff;
+  border-color: var(--primary-color);
 }
 
 button {
   padding: 10px 15px;
-  background-color: #007bff;
+  background-color: var(--primary-color);
   color: white;
   border: none;
   border-radius: 0 8px 8px 0;
@@ -62,7 +78,7 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: var(--hover-color);
 }
 
 /* Liste des tâches */
@@ -72,41 +88,46 @@ button:hover {
   margin: 0;
 }
 
+.card {
+  background-color: #1e1e1e;
+}
+
 #todo-list li {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 15px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--input-border);
   border-radius: 8px;
   margin-bottom: 10px;
-  background: #f9f9f9;
+  background: var(--item-bg);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: var(--text-color);
 }
 
 #todo-list li:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 #todo-list li.completed {
   text-decoration: line-through;
-  color: #888;
-  background: #e6e6e6;
+  color: var(--text-color);
+  background: var(--item-completed-bg);
 }
 
 /* Boutons */
 .delete-btn {
   background: none;
   border: none;
-  color: #e74c3c;
+  color: var(--delete-color);
   cursor: pointer;
   font-size: 1rem;
   transition: color 0.3s ease;
 }
 
 .delete-btn:hover {
-  color: #c0392b;
+  color: var(--delete-hover);
 }
 
 /* Checkboxes */
@@ -114,7 +135,7 @@ button:hover {
   margin-right: 10px;
   transform: scale(1.2);
   cursor: pointer;
-  accent-color: #007bff;
+  accent-color: var(--primary-color);
 }
 
 /* Responsivité */
