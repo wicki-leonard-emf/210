@@ -44,14 +44,6 @@ jobs:
           output_location: "." # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
 
-          # Analyse des performances avec Lighthouse
-      - name: Exécuter Lighthouse sur le build
-        uses: treosh/lighthouse-ci-action@v12
-        with:
-          urls: ${{ steps.builddeploy.outputs.static_web_app_url }}
-          uploadArtifacts: true # Sauvegarde les résultats du rapport
-          temporaryPublicStorage: true # Génère un lien public vers le rapport
-
       - name: Exécuter Lighthouse
         uses: treosh/lighthouse-ci-action@v12
         with:
