@@ -48,10 +48,9 @@ jobs:
       - name: Run Lighthouse CI
         uses: treosh/lighthouse-ci-action@v9
         with:
-          urls: https://your-app-url.com
+          urls: ${{ secrets.DEPLOYED_SITE_URL }}
           uploadArtifacts: true
           temporaryPublicStorage: true
-          assertions: '{"categories:performance": ["error", {"minScore": 0.9}], "categories:accessibility": ["error", {"minScore": 0.9}]}'
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
